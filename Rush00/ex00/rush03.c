@@ -3,30 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lauge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/31 12:47:54 by smira             #+#    #+#             */
-/*   Updated: 2019/09/01 17:36:16 by smira            ###   ########.fr       */
+/*   Created: 2019/08/31 13:01:42 by lauge             #+#    #+#             */
+/*   Updated: 2019/09/01 19:26:12 by maboular         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putchar(char c);
-
-void	ft_erreur(void)
-{
-	write(1, "ERREUR , valeur negative", 25);
-	return ;
-}
 
 void	rush(int x, int y)
 {
 	int h;
 	int w;
 
-	if (x < 0 || y < 0)
-		ft_erreur();
 	h = 1;
 	while (h <= y)
 	{

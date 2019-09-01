@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush04.c                                           :+:      :+:    :+:   */
+/*   rushtest.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: maboular <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/01 17:24:16 by smira             #+#    #+#             */
-/*   Updated: 2019/09/01 17:38:56 by smira            ###   ########.fr       */
+/*   Created: 2019/09/01 16:52:09 by maboular          #+#    #+#             */
+/*   Updated: 2019/09/01 19:26:34 by maboular         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putchar(char c);
-
-void	ft_erreur(void)
-{
-	write(1, "ERREUR, valeur negative", 24);
-	return ;
-}
 
 void	rush(int x, int y)
 {
 	int h;
 	int w;
 
-	if (x < 0 || y < 0)
-		ft_erreur();
 	h = 1;
 	while (h <= y)
 	{

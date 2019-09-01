@@ -3,30 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lauge <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/01 16:53:39 by smira             #+#    #+#             */
-/*   Updated: 2019/09/01 17:36:04 by smira            ###   ########.fr       */
+/*   Created: 2019/09/01 12:17:11 by lauge             #+#    #+#             */
+/*   Updated: 2019/09/01 19:25:53 by maboular         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putchar(char c);
-
-void	ft_erreur(void)
-{
-	write(1, "ERREUR, valeur negative", 24);
-	return ;
-}
 
 void	rush(int x, int y)
 {
 	int h;
 	int w;
 
-	if (x < 0 || y < 0)
-		ft_erreur();
 	h = 1;
 	while (h <= y)
 	{
@@ -35,9 +25,9 @@ void	rush(int x, int y)
 		{
 			if ((h == 1 && w == 1) || (h == 1 && w == x))
 				ft_putchar('A');
-			else if ((h == y && w == 1) || (h == y && w == x))
+			else if ((h == y && w == x) || (h == y && w == 1))
 				ft_putchar('C');
-			else if ((w > 1 && w < x) && (h != 1 && h != y))
+			else if ((w != 1 && w != x) && (h != 1 && h != y))
 				ft_putchar(' ');
 			else
 				ft_putchar('B');
