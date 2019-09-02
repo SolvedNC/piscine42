@@ -6,72 +6,62 @@
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 15:04:55 by smira             #+#    #+#             */
-/*   Updated: 2019/08/30 16:51:58 by smira            ###   ########.fr       */
+/*   Updated: 2019/09/02 12:43:01 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char	c)
+void	ft_putchar(char c)
 {
-		write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-
-void	ft_combinaisons(char a, char b ,char c, char d)
+void	ft_combinaisons(int a)
 {
-		if (a == 9 && b == 8 && c == 9 && d == 9)
-		{
-			ft_putchar(a + 48);
-			ft_putchar(b+ 48);
-			ft_putchar(' ');
-			ft_putchar(c+ 48);
-			ft_putchar(d+ 48);
-		}
-		else
-		{
-			ft_putchar(a+ 48);
-			ft_putchar(b+ 48);
-			ft_putchar(' ');
-			ft_putchar(c+ 48);
-			ft_putchar(d+ 48);
-			ft_putchar(',');
-			ft_putchar(' ');
-		}
+	int nb1;
+	int nb2;
 
+	if (a > 9)
+	{
+		nb1 = a / 10;
+		nb2 = a % 10;
+		ft_putchar(nb1 + 48);
+		ft_putchar(nb2 + 48);
+	}
+	else
+	{
+		ft_putchar('0');
+		ft_putchar(a + 48);
+	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	a;
-	char	b;
-	char	c;
-	char	d;
+	int f;
+	int s;
 
-	a = 0;
-	b = 0;
-	c = 0;
-	d = 1;
-	while (a <= 9)
+	f = 0;
+	while (f <= 98)
 	{
-		while (b <= 8)
+		s = f + 1;
+		while (s <= 99)
 		{
-			while (c <= 9)
+			ft_combinaisons(f);
+			ft_putchar(' ');
+			ft_combinaisons(s);
+			if (f < 98 || s < 99)
 			{
-				while (d <= 9)
-				{
-					ft_combinaisons(a, b, c, d);
-					d++;
-				}
-				c++;
+				ft_putchar(',');
+				ft_putchar(' ');
 			}
-			b++;
+			s++;
 		}
-		a++;
+		f++;
 	}
 }
 
-int	main()
+int		main(void)
 {
 	ft_print_comb2();
 }
