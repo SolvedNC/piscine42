@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 13:07:55 by smira             #+#    #+#             */
-/*   Updated: 2019/09/03 17:26:10 by smira            ###   ########.fr       */
+/*   Created: 2019/09/03 18:47:51 by smira             #+#    #+#             */
+/*   Updated: 2019/09/03 20:41:22 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+	int tpm;
+
+	i = 0;
+	while (tab[i] && i < size / 2)
+	{
+		tpm = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = tpm;
+		i++;
+	}
 }

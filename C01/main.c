@@ -1,17 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 13:07:55 by smira             #+#    #+#             */
-/*   Updated: 2019/09/03 17:26:10 by smira            ###   ########.fr       */
+/*   Created: 2019/09/03 13:18:07 by smira             #+#    #+#             */
+/*   Updated: 2019/09/03 20:42:25 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+#include <stdio.h>
+
+void	ft_rev_int_tab(int *tab, int size);
+
+int		main(void)
 {
-	*div = a / b;
-	*mod = a % b;
+	int		tab[7] = {1, 2, 3, 4, 5, 6, 7};
+
+	ft_rev_int_tab(tab, 7);
+	
+	int	i;
+	i = 0;
+	while (tab[i])
+	{
+		printf("%d ", tab[i]);
+		i++;
+	}
 }
