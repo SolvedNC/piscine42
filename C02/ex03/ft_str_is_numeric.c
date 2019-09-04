@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 13:18:07 by smira             #+#    #+#             */
-/*   Updated: 2019/09/03 22:31:41 by smira            ###   ########.fr       */
+/*   Created: 2019/09/04 18:31:43 by smira             #+#    #+#             */
+/*   Updated: 2019/09/04 19:29:44 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-
-void	ft_rev_int_tab(int *tab, int size);
-
-int		main(void)
+int			ft_str_is_numeric(char *str)
 {
-	int		tab[7] = {1, 2, 3, 4, 5, 6, 7};
+	unsigned int	i;
 
-	ft_rev_int_tab(tab, 7);
-	
-	int	i;
 	i = 0;
-	while (tab[i])
+	while (str[i] != '\0')
 	{
-		printf("%d ", tab[i]);
+		if ((str[i] < '0' || str[i] > '9'))
+			return (0);
 		i++;
 	}
+	return (1);
 }

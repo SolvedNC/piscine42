@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 13:18:07 by smira             #+#    #+#             */
-/*   Updated: 2019/09/03 22:31:41 by smira            ###   ########.fr       */
+/*   Created: 2019/09/04 18:48:14 by smira             #+#    #+#             */
+/*   Updated: 2019/09/04 19:39:36 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_rev_int_tab(int *tab, int size);
-
-int		main(void)
+int			ft_str_is_lowercase(char *str)
 {
-	int		tab[7] = {1, 2, 3, 4, 5, 6, 7};
+	unsigned int	i;
 
-	ft_rev_int_tab(tab, 7);
-	
-	int	i;
 	i = 0;
-	while (tab[i])
+	while (str[i] != '\0')
 	{
-		printf("%d ", tab[i]);
+		if (str[i] < 'a' || str[i] > 'z')
+			return (0);
 		i++;
 	}
+	return (1);
 }
