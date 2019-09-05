@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 12:36:57 by smira             #+#    #+#             */
-/*   Updated: 2019/09/05 11:33:56 by smira            ###   ########.fr       */
+/*   Created: 2019/09/04 19:50:47 by smira             #+#    #+#             */
+/*   Updated: 2019/09/04 21:03:11 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strcpy(char *dest, char *src)
+int			ft_str_is_printable(char *str)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
-	while (src[i])
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] < 32 || str[i] > 127)
+			return (0);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (1);
 }

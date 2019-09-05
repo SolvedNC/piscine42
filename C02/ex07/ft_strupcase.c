@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 12:52:05 by smira             #+#    #+#             */
-/*   Updated: 2019/09/04 19:46:40 by smira            ###   ########.fr       */
+/*   Created: 2019/09/04 21:04:07 by smira             #+#    #+#             */
+/*   Updated: 2019/09/04 21:15:22 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int			ft_str_is_uppercase(char *str);
-
-int			main(void)
+char		*ft_strupcase(char *str)
 {
-	char	lmao[1];
+	unsigned int	i;
 
-	printf("%d\n", ft_str_is_uppercase(lmao));
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = str[i] - 32;
+		}
+		i++;
+	}
+	return (str);
 }
