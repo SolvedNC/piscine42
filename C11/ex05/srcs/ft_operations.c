@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_operations.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:27:09 by smira             #+#    #+#             */
-/*   Updated: 2019/09/19 11:30:55 by smira            ###   ########.fr       */
+/*   Created: 2019/09/19 12:06:47 by smira             #+#    #+#             */
+/*   Updated: 2019/09/19 13:11:47 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../includes/ft.h"
 
-int			*ft_map(int *tab, int length, int (*f)(int))
+int		ft_add(int a, int b)
 {
-	int		*mytab;
-	int		i;
+	return (a + b);
+}
 
-	i = 0;
-	if (!(mytab = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	while (i < length)
-	{
-		mytab[i] = (*f)(tab[i]);
-		i++;
-	}
-	return (mytab);
+int		ft_sub(int a, int b)
+{
+	return (a - b);
+}
+
+int		ft_div(int a, int b)
+{
+	return (a / b);
+}
+
+int		ft_multiply(int a, int b)
+{
+	return (a * b);
+}
+
+int		ft_mod(int a, int b)
+{
+	return (a % b);
 }

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:27:09 by smira             #+#    #+#             */
-/*   Updated: 2019/09/19 11:30:55 by smira            ###   ########.fr       */
+/*   Created: 2019/09/19 12:11:41 by smira             #+#    #+#             */
+/*   Updated: 2019/09/19 13:11:37 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../includes/ft.h"
 
-int			*ft_map(int *tab, int length, int (*f)(int))
+void	ft_putchar(char c)
 {
-	int		*mytab;
-	int		i;
-
-	i = 0;
-	if (!(mytab = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	while (i < length)
-	{
-		mytab[i] = (*f)(tab[i]);
-		i++;
-	}
-	return (mytab);
+	write(1, &c, 1);
 }

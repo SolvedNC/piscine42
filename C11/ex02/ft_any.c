@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:27:09 by smira             #+#    #+#             */
-/*   Updated: 2019/09/19 11:30:55 by smira            ###   ########.fr       */
+/*   Created: 2019/09/19 11:16:55 by smira             #+#    #+#             */
+/*   Updated: 2019/09/19 11:31:25 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int			*ft_map(int *tab, int length, int (*f)(int))
+int					ft_any(char **tab, int (*f)(char*))
 {
-	int		*mytab;
 	int		i;
 
 	i = 0;
-	if (!(mytab = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	while (i < length)
+	while (tab[i] != 0)
 	{
-		mytab[i] = (*f)(tab[i]);
+		if ((*f)(tab[i]) != 0)
+			return (1);
 		i++;
 	}
-	return (mytab);
+	return (0);
 }

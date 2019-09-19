@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 15:27:09 by smira             #+#    #+#             */
-/*   Updated: 2019/09/19 11:30:55 by smira            ###   ########.fr       */
+/*   Created: 2019/09/19 12:13:41 by smira             #+#    #+#             */
+/*   Updated: 2019/09/19 13:11:58 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../includes/ft.h"
 
-int			*ft_map(int *tab, int length, int (*f)(int))
+void	ft_putnbr(int nb)
 {
-	int		*mytab;
-	int		i;
+	unsigned int	nbr;
 
-	i = 0;
-	if (!(mytab = (int *)malloc(sizeof(int) * length)))
-		return (0);
-	while (i < length)
+	if (nb < 0)
 	{
-		mytab[i] = (*f)(tab[i]);
-		i++;
+		ft_putchar('-');
+		nbr = nb * -1;
 	}
-	return (mytab);
+	else
+		nbr = nb;
+	if (nbr >= 10)
+		ft_putnbr(nbr / 10);
+	ft_putchar(nbr % 10 + 48);
 }
