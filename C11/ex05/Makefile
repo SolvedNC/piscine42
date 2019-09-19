@@ -6,38 +6,29 @@
 #    By: smira <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/18 17:48:05 by smira             #+#    #+#              #
-#    Updated: 2019/09/19 17:41:59 by smira            ###   ########.fr        #
+#    Updated: 2019/09/19 14:40:25 by smira            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+SRCS    = ./srcs/ft_atoi.c  ./srcs/ft_doop.c  ./srcs/ft_operations.c  ./srcs/ft_putchar.c  ./srcs/ft_putnbr.c  ./srcs/ft_putstr.c  ./srcs/main.c
 
-SRCS    = srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
+INCLUDES = ./includes/ft.h
 
-INCLUDES = includes
+OBJS    = ./*.o
 
-OBJS    = ${SRCS:.c=.o}
-
-GCC     = gcc
 RM      = rm -f
 
-AR      = ar rc
+FLAGS  = -Wall -Wextra -Werror -I${INCLUDES}
 
-CFLAGS  = -Wall -Wextra -Werror -I${INCLUDES}
-
-.c.o:
-		                ${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
-${NAME}:    ${OBJS}
-		                ${AR} ${NAME} ${OBJS}
-
-all:        ${NAME}
+all:
+	@	gcc ${FLAGS} -c ${SRCS}
+	@	gcc ${FLAGS} -o do-op ${SRCS}
 
 clean:
-		                ${RM} ${OBJS}
+		             @   ${RM} ${OBJS}
 
 fclean:     clean
-		                ${RM} ${NAME}
+		              @  ${RM} do-op
 
 re:         fclean all
 

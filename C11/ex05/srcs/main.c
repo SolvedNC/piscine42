@@ -6,11 +6,11 @@
 /*   By: smira <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 12:45:08 by smira             #+#    #+#             */
-/*   Updated: 2019/09/19 13:24:42 by smira            ###   ########.fr       */
+/*   Updated: 2019/09/19 14:24:13 by smira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft.h"
+#include "../includes/ft.h"
 
 int		main(int argc, char **argv)
 {
